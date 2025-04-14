@@ -5,10 +5,6 @@ get("/howdy") do
   erb(:hello)
 end
 
-get("/goodbye") do
-  erb(:goodbye)
-end
-
 get("/square/new") do
   erb(:new_square_calc)
 end
@@ -22,7 +18,7 @@ get("/square/results") do
 end
 
 get("/square_root/new") do
-  erb()
+  erb(:new_root_calc)
 end
 
 get("/random/new") do
@@ -38,8 +34,5 @@ get("/square/results") do
 end
 
 get("/") do
-  "
-  <h1>Welcome to your Sinatra App!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  erb(:new_square_calc)
 end

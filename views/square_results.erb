@@ -5,13 +5,17 @@
     Number
   </dt>
   <dd>
-    <% params.fetch("users_number") %>
+    <%= @the_num %>
   </dd>
 
   <dt>
     Square
   </dt>
   <dd>
-    <% params.fetch("users_number").to_f * params.fetch("users_number").to_f %>
+    <%= @the_result %>
   </dd>
 </dl>
+
+<a href="/square/new">
+  Calculate another square
+</a>

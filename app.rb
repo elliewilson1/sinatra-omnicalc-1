@@ -1,8 +1,8 @@
 require "sinatra"
 require "sinatra/reloader"
 
-get("/howdy") do
-  erb(:hello)
+get("/") do
+  erb(:new_square_calc)
 end
 
 get("/square/new") do
@@ -10,7 +10,7 @@ get("/square/new") do
 end
 
 get("/square/results") do
-  @the_num = params.fetch("users_number").to_f
+  @the_num = params.fetch("user_number").to_f
 
   @the_result = @the_num ** 2
 
@@ -18,21 +18,29 @@ get("/square/results") do
 end
 
 get("/square_root/new") do
-  erb(:new_root_calc)
+  erb(:new_square_root_calc)
+end
+
+get("/square_root/results") do
+  @the_num = params.fetch("user_number").to_f
+
+  @the_result = @the_num ** 0.5
+
+  erb(:square_root_results)
 end
 
 get("/random/new") do
-  erb()
+  erb(:new_random)
+end
+
+get("/random/results") do
+  erb(:random_results)
 end
 
 get("/payment/new") do
-  erb()
+  erb(:new_payment)
 end
 
-get("/square/results") do
-  erb(:square_results)
-end
-
-get("/") do
-  erb(:new_square_calc)
+get("/payment/results") do
+  erb(:payment_results)
 end
